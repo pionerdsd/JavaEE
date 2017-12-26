@@ -1,0 +1,43 @@
+
+body{
+	background: #998854;  /* fgfgsdgsdgsdgsd*/
+	padding: 15px;
+	margin: 0px;
+	
+}
+
+
+.header{
+	background: #999954;
+	height: 100px;
+	width: 100%;
+}
+
+.menu{
+	height: 700px;
+	width: 250px;
+	background: #889954;
+	margin-top: 15px;
+	float: left;
+}
+
+.info{
+	background: #779954;
+	margin-left: 265px;
+	margin-top: 15px;
+	height: 700px;
+}
+
+.footer{
+	height: 50px;
+	background: #669954;
+	margin-top: 15px;
+}
+table{
+	width: 100%;	
+}
+td{
+	border: 2px solid black;
+	
+}
+
