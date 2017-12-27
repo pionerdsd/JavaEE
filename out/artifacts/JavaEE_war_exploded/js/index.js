@@ -87,6 +87,16 @@ function changeColor(ob){
 
     }
 
+    function dataB(ob) {
+        if (ob.checked) {
+            alert("start");
+        }
+        else {
+            alert("stop");
+        }
+
+    }
+
 
 
 }

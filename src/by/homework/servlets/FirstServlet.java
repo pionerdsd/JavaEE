@@ -2,6 +2,8 @@ package by.homework.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.Map;
 
@@ -32,13 +34,20 @@ public class FirstServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
+
         PrintWriter out = response.getWriter();
-
-        HttpSession session =  request.getSession(true);
-
+       
 
 
-      /*  Map<String, String[]> map = request.getParameterMap();
+/*
+        out.print(new Date(System.currentTimeMillis()));
+        out.print("<br>");
+
+        out.print(new SimpleDateFormat("MM/dd/yyyy").format(new Date(System.currentTimeMillis())));
+
+        out.print("<br>");*/
+
+        Map<String, String[]> map = request.getParameterMap();
         for(Map.Entry<String, String[]> entry: map.entrySet()) {
             out.print(entry.getKey());
             for(String s : entry.getValue()) {
@@ -46,9 +55,11 @@ public class FirstServlet extends HttpServlet {
                 out.print("<br>");
             }
         }
-*/
-		String login = request.getParameter("newLogin");
+
+		/*String login = request.getParameter("newLogin");
         out.print(login);
+        String birthdate = request.getParameter("birthdate");
+        out.print(birthdate);*/
 /*
 		String [] checkMas = request.getParameterValues("check");
 		for(String s: checkMas) {

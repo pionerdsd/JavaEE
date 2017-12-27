@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+</head>
+
+<body>
+<input type="text" name="birthdate" value="01/01/2000" />
+
+<script type="text/javascript">
+
+
+    $(function() {
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear()-16;
+
+        if(dd<10) {
+            dd = '0'+dd
+        }
+
+        if(mm<10) {
+            mm = '0'+mm
+        }
+
+        today = mm + '/' + dd + '/' + yyyy;
+
+
+
+
+        $('input[name="birthdate"]').daterangepicker({maxDate: today, singleDatePicker: true, showDropdowns: true});
+
+    });
+</script>
+
+</body>
+
+
+</html>
