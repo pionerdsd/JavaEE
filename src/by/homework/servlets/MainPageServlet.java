@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 
 @WebServlet(value = "/MainPageServlet")
 public class MainPageServlet extends HttpServlet {
+    @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
@@ -21,12 +22,13 @@ public class MainPageServlet extends HttpServlet {
         out.print("<meta charset=\"UTF-8\">");
         out.print("<title>Insert title here</title>");
         out.print("</head><body>");
-        out.print("<script type=\"text/javascript\">");
-        out.print("alert('OK!');");
-        out.print("</script></body></html>");
-
+        out.print("<h3>");
+        out.print("All right");
+        out.print("</h3></body></html>");
 
 
 
     }
+
+
 }

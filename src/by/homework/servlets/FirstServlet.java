@@ -7,10 +7,7 @@ import by.homework.servlets.entity.Users;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
+
 import java.util.Map;
 
 import javax.jms.Session;
@@ -26,16 +23,35 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(value = "/sendForm")
 public class FirstServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
-
-
+private static int test =0;
     @Override
     public void init() throws ServletException {
         System.out.println("init");
+
     }
+   /* @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.print("You win! " + test);
+
+
+    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        test+=1500;
+
+        response.sendRedirect("/sendForm");
+    }
+*/
 
 
 
+
+
+    /*
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
@@ -59,7 +75,7 @@ public class FirstServlet extends HttpServlet {
         }*/
 
 
-
+/*
         Cookie cok = new Cookie("login", request.getParameter("newLogin"));
         response.addCookie(cok);
 
@@ -108,7 +124,7 @@ public class FirstServlet extends HttpServlet {
         out.print(new SimpleDateFormat("MM/dd/yyyy").format(new Date(System.currentTimeMillis())));
 
         out.print("<br>");*/
-
+/*
         Map<String, String[]> map = request.getParameterMap();
         for(Map.Entry<String, String[]> entry: map.entrySet()) {
             out.print(entry.getKey());
@@ -138,7 +154,7 @@ public class FirstServlet extends HttpServlet {
         //out.print("Hello world! Привет мир!");
         //out.print("</head><body>");
 
-    }
+ //   }
 
 
 
