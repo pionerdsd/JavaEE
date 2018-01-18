@@ -1,16 +1,29 @@
 package by.homework.servlets.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Created by dmurashko on 07.12.2017.
  */
-public class Users {
+@Entity
+@Table (name = "users")
+public class Users implements Serializable{
+    private static final long serialVersionUID = 1360027157056486431L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "Login", nullable = false, unique = true)
     private String Login;
+    @Column(name = "Password", nullable = false)
     private String Password;
+    @Column(name = "Email", nullable = false, unique = true)
     private String Email;
+    @Column (name = "Role", columnDefinition = "INT DEFAULT 1")
     private int Role;
+    @Column (name = "BlackList",columnDefinition = "INT DEFAULT 1")
     private int BlackList;
 
     public Users() {}
