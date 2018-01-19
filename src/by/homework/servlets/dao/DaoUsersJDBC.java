@@ -1,4 +1,4 @@
-package by.homework.servlets.dao;
+/*package by.homework.servlets.dao;
 
 
 import by.homework.servlets.DB.DB;
@@ -9,9 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-/**
- * Created by dmurashko on 07.12.2017.
- */
+
 public class DaoUsersJDBC implements daoInterface<Users> {
     public DB db;// если  в поле класса заносим объет, то можно обращаться к полям этого объекта тк же как если бы мы создали его через new?
 
@@ -145,3 +143,4 @@ public class DaoUsersJDBC implements daoInterface<Users> {
 
 
 }
+*/

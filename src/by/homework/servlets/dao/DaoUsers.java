@@ -38,4 +38,5 @@ public class DaoUsers implements daoInterface<Users> {
         HibernateUtil.closeSession(session);
         return list;
     }
-}
+  }
+

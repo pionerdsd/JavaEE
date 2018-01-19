@@ -17,6 +17,16 @@ function testLogin(form){
     return true;
 }
 
+function testPasswordOnly(form){
+    var password = form.newPassword.value;
+
+    if(!/^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/.test(password)){
+        alert("Пароль не подходит!");
+        return false;
+    }
+       return true;
+}
+
 
 function testPassword(form){
     var password = form.newPassword.value;

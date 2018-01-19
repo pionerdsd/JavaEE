@@ -1,4 +1,4 @@
-package by.homework.servlets;
+/*package by.homework.servlets;
 
 import by.homework.servlets.DB.DB;
 import by.homework.servlets.DB.DB_Builder;
@@ -29,7 +29,9 @@ private static int test =0;
         System.out.println("init");
 
     }
-   /* @Override
+
+
+     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         request.setCharacterEncoding("UTF-8");
@@ -156,7 +158,7 @@ private static int test =0;
 
  //   }
 
-
+/*
 
     @Override
     public void destroy() {
@@ -165,4 +167,4 @@ private static int test =0;
 
 
 
-}
+}*/
