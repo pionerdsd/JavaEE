@@ -1,6 +1,6 @@
 package by.homework.servlets;
 
-public class Authorization {
+public class Validator {
   /*private String login;
    private String password;
    private String confpassword;
@@ -8,7 +8,7 @@ public class Authorization {
    private String birthday;
    private String checkboxes;
    private String area;
-   public Authorization(){}*/
+   public Validator(){}*/
 
 
 public boolean Registration(String login, String password, String confpassword, String email, String birthday, int checkLenght){

@@ -29,6 +29,22 @@
 
 </head>
 <body>
+
+<%
+    String faillog = response.getHeader("loginfail");
+    if(faillog != null){
+        if(faillog.equals("1")) {
+            out.print("<script>\n" +
+                    "    alert(\"Неверный логин или пароль!\")\n" +
+                    "</script>");
+        }
+        if (faillog.equals("2")){
+            out.print("<script>\n" +
+                    "    alert(\"Регистрация прошла успешно!\")\n" +
+                    "</script>");
+        }
+    }
+%>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 
     <div class="container-fluid">
@@ -89,6 +105,15 @@
 
                 </div>
                 <div class="col-md-2">
+                    <div class="container-fluid" style="padding-top: 7px">
+                        <div class="form-group">
+                            <form method="post" action="registrationform">
+                                <button type="registerationform" class="btn btn-default">Register
+                                    <span class="glyphicon glyphicon-ok" style="font-size:15px"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
 
                 </div>
             </div>

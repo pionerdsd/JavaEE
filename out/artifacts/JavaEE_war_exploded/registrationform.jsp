@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,78 +29,24 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
 
 </head>
-<body>
+<body><%
+    String faillog = response.getHeader("badlogin");
+    if (faillog != null) {
+        if (faillog.equals("1")) {
+            out.print("<script>\n" +
+                    "    alert(\"Такой пользователь уже существует!\")\n" +
+                    "</script>");
+        }
+        if (faillog.equals("2")) {
+            out.print("<script>\n" +
+                    "    alert(\"Неверно заполнена форма регистрации!\")\n" +
+                    "</script>");
+        }
 
-<!--<nav class="navbar navbar-default" role="navigation">
+    }
+%>
 
-	<div class="container-fluid">
-
-		<div class="row">
-
-			<div class="col-md-6">
-				<div class="col-md-2"> <a class="navbar-brand" href="#">JavaEE</a></div>
-				<div class="col-md-9">
-
-
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Поиск">
-						</div>
-						<button type="submit" class="btn btn-default">Search
-							<span class="glyphicon glyphicon-search" style="font-size:20px"></span>
-						</button>
-					</form>
-
-
-
-				</div>
-				<div class="col-md-1"></div>
-
-			</div>
-			<div class="col-md-6">
-				<div class="col-md-1"></div>
-				<div class="col-md-9">
-
-
-
-
-					<ul class="nav navbar-nav" >
-						<div class="container-fluid" style="padding-top: 7px">
-							<form role="form" class="form-inline">
-								<div class="form-group">
-
-									<input type="login" class="form-control" id="login" placeholder="Введите Login">
-
-								</div>
-								<div class="form-group">
-
-									<input type="Password" class="form-control" id="Password" placeholder="Введите Password">
-
-								</div>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox">save me
-									</label>
-								</div>
-								<button type="button"  class="btn btn-default">Sign In
-									<span class="glyphicon glyphicon-ok" style="font-size:20px"></span>
-								</button>
-							</form>
-						</div>
-					</ul>
-
-
-				</div>
-				<div class="col-md-2">
-
-				</div>
-			</div>
-		</div>
-	</div>
-</nav>-->
-
-
-<form action="sendForm" method="POST" class="container-fluid" style="padding-top:3%"
+<form action="registration" method="POST" class="container-fluid" style="padding-top:3%"
       onsubmit="if(cancelJS.checked){return true;}else{return main(this);}">
 
 
@@ -229,49 +178,46 @@
                             <div class="container-fluid" style="padding-top: 10px;">
                                 <div class="form-group">
                                     <label for="comment">Your variant:</label>
-                                    <textarea class="form-control" rows="6" name="area1" id="comment" disabled>
-									</textarea>
+                                    <textarea class="form-control" rows="6" name="area1" id="comment"
+                                              disabled></textarea>
+
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-9">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-8">
+                                    <button type="submit" class="btn btn-default"
+                                            style="padding-top: 10px; min-width: 120px;">Register
+                                        <span class="glyphicon glyphicon-ok-circle"
+                                              style="font-size:15px;"></span>
+                                    </button>
 
 
-
-
-                                        <button type="submit" class="btn btn-default"
-                                                style="padding-top: 10px; min-width: 120px;">Register
-                                            <span class="glyphicon glyphicon-ok-circle"
-                                                  style="font-size:15px;"></span>
-                                        </button>
-
-
-                                        <label class="btn btn-default" style="min-width: 120px;">
-                                            <input type="checkbox" name="cancelJS"> CancelJS
-                                        </label>
-
+                                    <label class="btn btn-default" style="min-width: 120px;">
+                                        <input type="checkbox" name="cancelJS"> CancelJS
+                                    </label>
 
                                 </div>
-
                             </div>
 
-
-                        </form>
-                        <form action="index">
-                            <button type="submit" class="btn btn-default"
-                                    style="padding-top: 10px; min-width: 120px;">Cancel
-                                <span class="glyphicon glyphicon-remove"
-                                      style="font-size:15px;"></span>
-                            </button>
 
                         </form>
                     </div>
 
                 </nav>
             </div>
-            <div class="col-md-1"></div>
+            <div class="col-md-1">
+                <form action="index">
+                    <button type="submit" class="btn btn-default"
+                            style="padding-top: 10px; min-width: 120px;">Cancel
+                        <span class="glyphicon glyphicon-remove"
+                              style="font-size:15px;"></span>
+                    </button>
+
+                </form>
+
+            </div>
 
 
         </div>

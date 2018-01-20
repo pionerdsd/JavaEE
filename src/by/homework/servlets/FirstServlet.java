@@ -84,7 +84,7 @@ private static int test =0;
 
 
         if (request.getParameter("check") != null) {
-            if ((new Authorization().Registration(request.getParameter("newLogin"), request.getParameter("newPassword"), request.getParameter("ConfirmPassword"), request.getParameter("email"), request.getParameter("birthdate"), request.getParameter("check").length()))) {
+            if ((new Validator().Registration(request.getParameter("newLogin"), request.getParameter("newPassword"), request.getParameter("ConfirmPassword"), request.getParameter("email"), request.getParameter("birthdate"), request.getParameter("check").length()))) {
 
                 //DB_Builder.deleteDB("jdbc:mysql://127.0.0.1/", "Shop", "root", "root");
                 //DB_Builder.createDB("jdbc:mysql://127.0.0.1/", "Shop", "root", "root");
@@ -114,11 +114,11 @@ private static int test =0;
 
 
 
-//Authorization authorization= new Authorization(request.getParameter("newLogin"),request.getParameter("newPassword"),request.getParameter("ConfirmPassword"),request.getParameter("email"),request.getParameter("birthdate"));
+//Validator authorization= new Validator(request.getParameter("newLogin"),request.getParameter("newPassword"),request.getParameter("ConfirmPassword"),request.getParameter("email"),request.getParameter("birthdate"));
 //authorization.printVal();
 //authorization.Registration(request.getParameter("newLogin"),request.getParameter("newPassword"),request.getParameter("ConfirmPassword"),request.getParameter("email"),request.getParameter("birthdate"));
 
-      //  System.out.println(new Authorization().Registration(request.getParameter("newLogin"),request.getParameter("newPassword"),request.getParameter("ConfirmPassword"),request.getParameter("email"),request.getParameter("birthdate"),request.getParameter("check").length()));
+      //  System.out.println(new Validator().Registration(request.getParameter("newLogin"),request.getParameter("newPassword"),request.getParameter("ConfirmPassword"),request.getParameter("email"),request.getParameter("birthdate"),request.getParameter("check").length()));
 /*
         out.print(new Date(System.currentTimeMillis()));
         out.print("<br>");

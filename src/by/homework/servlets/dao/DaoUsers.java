@@ -6,6 +6,7 @@ import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import java.util.List;
 public class DaoUsers implements daoInterface<Users> {
+    public boolean failloging;
     @Override
     public void insert(Users o) {
         Session session = HibernateUtil.getSession();
