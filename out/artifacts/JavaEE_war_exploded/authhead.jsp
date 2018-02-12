@@ -17,7 +17,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <script src="test/index.js"></script>
     <!-- Include Date Range Picker -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
@@ -98,6 +98,16 @@
         </div>
     </div>
 </nav>
+<div class="row" style="padding-top: 5%">
+    <div class="col-md-4">
+        <%@ include file="/menu.jsp"%>
+    </div>
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+
+
+</div>
 
 
 

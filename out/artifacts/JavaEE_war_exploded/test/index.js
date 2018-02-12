@@ -1,5 +1,7 @@
 function main(form) {
-    if (testLogin(form) && testEmail(form) && testPassword(form) && testPol(form) && testCheck(form) && testTelephone(form) && testAddress(form)) {
+
+
+    if (testLogin(form) && testEmail(form) && testPassword(form) && testPol(form) && testTelephone(form) && testAddress(form)) {
 
         return true;
     }
@@ -43,16 +45,6 @@ function testPassword(form) {
 }
 
 
-function testPol(form) {
-    var pol = form.pol.value;
-    if (pol == "") {
-        alert("Choose your gender please!");
-        return false;
-    }
-    return true;
-}
-
-
 function testEmail(form) {
     var email = form.email.value;
 
@@ -64,14 +56,12 @@ function testEmail(form) {
 }
 
 
-
-
 function testTelephone(form) {
     var telephone = form.telephone.value;
     if (telephone.length > 0) {
         return true;
     }
-    alert(telephone);
+    alert("Insert your telephone!");
     return false;
 
 
@@ -83,12 +73,22 @@ function testAddress(form) {
     if (address.length > 0) {
         return true;
     }
-    alert(address);
+    alert("Insert your address!");
     return false;
 
 
 }
 
+
+function testPol(form) {
+    var pol = form.pol.value;
+    if (pol == "") {
+        alert("Choose your gender please!");
+        return false;
+    }
+    return true;
+
+}
 
 function testCheck(form) {
     var check = form.check;
@@ -122,15 +122,7 @@ function changeColor(ob) {
 
     }
 
-    function dataB(ob) {
-        if (ob.checked) {
-            alert("start");
-        }
-        else {
-            alert("stop");
-        }
 
-    }
 
 
 }

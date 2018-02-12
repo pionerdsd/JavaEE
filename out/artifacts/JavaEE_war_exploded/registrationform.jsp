@@ -23,7 +23,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
+    <script src="test/index.js"></script>
     <!-- Include Date Range Picker -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
@@ -87,6 +87,21 @@
                                        placeholder="Введите email">
                                 <p class="help-block"> Insert your email. </p>
                             </div>
+
+                            <div class="form-group">
+
+                                <input type="telephone" class="form-control" name="telephone" id="telephone_id"
+                                       placeholder="Введите telephone">
+                                <p class="help-block"> Insert your telephone. </p>
+                            </div>
+
+                            <div class="form-group">
+
+                                <input type="addressis" class="form-control" name="addressis" id="addressis_id"
+                                       placeholder="Введите address">
+                                <p class="help-block"> Insert your address. </p>
+                            </div>
+
 
                             <div class="container">
                                 <input type="text" name="birthdate" value="01/01/2000"/>
