@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization page.</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="test/index.js"></script>
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+</head>
+<body>
+<form action="MainPageServlet" method="post" class="container-fluid" onsubmit="true" >
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-4"></div>
+            <div class="col-md-3">
+
+                <nav class="navbar navbar-default" role="navigation" style="margin-top: 20%; min-height: 250px;">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                                    <a class="navbar-brand" href="#">JavaEE</a>
+
+                                                    <div class="form-group" style="margin-top: 15%" >
+
+                                                       <input type="login"  class="form-control" id="login" placeholder="Введите Login">
+
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                    <input type="Password"  class="form-control" id="Password" placeholder="Введите Password">
+
+                                                    </div>
+
+
+
+                                                  <div class="form-group">
+                                                      <button type="submit"  class="btn btn-default">Sign In
+                                                         <span class="glyphicon glyphicon-ok" style="font-size:15px"></span>
+                                                      </button>
+                                                      <button type="button"  class="btn btn-default">Register
+                                                          <span class="glyphicon glyphicon-plus" style="font-size:15px"></span>
+                                                      </button>
+                                                  </div>
+
+                                                  <div class="checkbox">
+                                                     <label>
+                                                         <input type="checkbox">Save
+                                                     </label>
+                                                  </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                </nav>
+
+            </div>
+
+            <div class="col-md-5"></div>
+        </div>
+    </div>
+
+</form>
+
+</body>
+</html>

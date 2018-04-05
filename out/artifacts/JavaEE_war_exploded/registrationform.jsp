@@ -1,0 +1,255 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Hello World!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="test/index.js"></script>
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
+
+</head>
+<body><%
+    String faillog = response.getHeader("badlogin");
+    if (faillog != null) {
+        if (faillog.equals("1")) {
+            out.print("<script>\n" +
+                    "    alert(\"Такой пользователь уже существует!\")\n" +
+                    "</script>");
+        }
+        if (faillog.equals("2")) {
+            out.print("<script>\n" +
+                    "    alert(\"Неверно заполнена форма регистрации!\")\n" +
+                    "</script>");
+        }
+
+    }
+%>
+
+<form action="registration" method="POST" class="container-fluid" style="padding-top:3%"
+      onsubmit="if(cancelJS.checked){return true;}else{return main(this);}">
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-2"></div>
+            <div class="col-md-9">
+                <nav class="navbar navbar-default" role="registrationForm" style="min-height: 820px;">
+                    <a class="navbar-brand" href="#">Registration form</a>
+
+                    <div class="container-fluid">
+                        <form role="form">
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" name="newLogin" id="newLogin1"
+                                       placeholder="Введите новый логин">
+                                <p class="help-block">Insert 8 - 16 symbols.</p>
+                            </div>
+                            <div class="form-group">
+
+                                <input type="password" class="form-control" name="newPassword" id="newPassword_id"
+                                       placeholder="Введите новый пароль">
+                                <p class="help-block">Password must consist 8 - 16 symbols and minimum one digit and one
+                                    upper char. </p>
+                            </div>
+
+                            <div class="form-group">
+
+                                <input type="ConfirmPassword" class="form-control" name="ConfirmPassword"
+                                       id="ConfirmPassword_id" placeholder="Повторите новый пароль">
+                                <p class="help-block">Password must consist 8 - 16 symbols and minimum one digit and one
+                                    upper char. </p>
+                            </div>
+
+                            <div class="form-group">
+
+                                <input type="email" class="form-control" name="email" id="email_id"
+                                       placeholder="Введите email">
+                                <p class="help-block"> Insert your email. </p>
+                            </div>
+
+                            <div class="form-group">
+
+                                <input type="telephone" class="form-control" name="telephone" id="telephone_id"
+                                       placeholder="Введите telephone">
+                                <p class="help-block"> Insert your telephone. </p>
+                            </div>
+
+                            <div class="form-group">
+
+                                <input type="addressis" class="form-control" name="addressis" id="addressis_id"
+                                       placeholder="Введите address">
+                                <p class="help-block"> Insert your address. </p>
+                            </div>
+
+
+                            <div class="container">
+                                <input type="text" name="birthdate" value="01/01/2000"/>
+
+                                <script type="text/javascript">
+
+
+                                    $(function () {
+
+                                        var today = new Date();
+                                        var dd = today.getDate();
+                                        var mm = today.getMonth() + 1; //January is 0!
+                                        var yyyy = today.getFullYear() - 16;
+
+                                        if (dd < 10) {
+                                            dd = '0' + dd
+                                        }
+
+                                        if (mm < 10) {
+                                            mm = '0' + mm
+                                        }
+
+                                        today = mm + '/' + dd + '/' + yyyy;
+
+
+                                        $('input[name="birthdate"]').daterangepicker({
+                                            maxDate: today,
+                                            singleDatePicker: true,
+                                            showDropdowns: true
+                                        });
+
+                                    });
+                                </script>
+
+                                <p class="help-block">Choose your birthday. </p>
+                            </div>
+
+                            <div class="btn-group btn-group-sm" data-toggle="buttons">
+                                <label class="btn btn-default" style="min-width: 120px;">
+                                    <input type="radio" name="man">Male.
+                                </label>
+
+                                <label class="btn btn-default" style="min-width: 120px;">Female.
+                                    <input type="radio" name="woman">
+                                </label>
+
+                                <label class="btn btn-default" style="min-width: 120px;">No matter.
+                                    <input type="radio" name="dog">
+                                </label>
+                                <p class="help-block">Choose your gender please. </p>
+                            </div>
+
+
+                            <br>
+                            <div class="btn-group-horizontal btn-group-md" data-toggle="buttons">
+                                <label class="btn btn-default" style="min-width: 120px;">
+                                    <input type="checkbox" name="check" value="valueInternet" id="idInternet"> Internet
+
+                                </label>
+
+                                <label class="btn btn-default" style="min-width: 120px;">
+                                    <input type="checkbox" name="check"> Television
+
+                                </label>
+
+                                <label class="btn btn-default" style="min-width: 120px;">
+                                    <input type="checkbox" name="check"> Radio
+
+                                </label>
+
+                                <label class="btn btn-default" style="min-width: 120px;">
+                                    <input type="checkbox" name="check"> Friends
+
+                                </label>
+
+
+                                <label class="btn btn-default" style="min-width: 120px;">
+                                    <input type="checkbox" name="check" onchange="changeColor(this)"> Your variant
+                                    <span class="glyphicon glyphicon-pushpin" name="glyphicon1" id="ChangeButtonColor6"
+                                          style="color:black; font-size:15px"></span>
+                                </label>
+
+
+                                <p class="help-block">Where have you learned about us?. </p>
+
+                            </div>
+
+
+                            <div class="container-fluid" style="padding-top: 10px;">
+                                <div class="form-group">
+                                    <label for="comment">Your variant:</label>
+                                    <textarea class="form-control" rows="6" name="area1" id="comment"
+                                              disabled></textarea>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-8">
+                                    <button type="submit" class="btn btn-default"
+                                            style="padding-top: 10px; min-width: 120px;">Register
+                                        <span class="glyphicon glyphicon-ok-circle"
+                                              style="font-size:15px;"></span>
+                                    </button>
+
+
+                                    <label class="btn btn-default" style="min-width: 120px;">
+                                        <input type="checkbox" name="cancelJS"> CancelJS
+                                    </label>
+
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                </nav>
+            </div>
+            <div class="col-md-1">
+                <form action="index">
+                    <button type="submit" class="btn btn-default"
+                            style="padding-top: 10px; min-width: 120px;">Cancel
+                        <span class="glyphicon glyphicon-remove"
+                              style="font-size:15px;"></span>
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</form>
+
+
+</body>
+
+
+<footer>
+    <nav class="navbar navbar-fixed-bottom navbar-default">
+        <div class="container-fluid text-center" style="padding-top: 15px;">
+            &copy;2017 JaveEE
+        </div>
+    </nav>
+</footer>
+
+</html>
